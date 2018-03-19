@@ -1,0 +1,16 @@
+$conn->beginTransaction();
+$inscuststmt = $conn->prepare("INSERT INTO f_customers(S_ID, name, email, subscribe_begin, subscribe_end)
+ VALUES(:current_server, :current_name, :current_email, CURDATE(), ADDDATE(CURDATE(), 30))");
+$inscuststmt->bindValue(':current_server', $current_server);
+$inscuststmt->bindValue(':current_name', $current_name);
+$inscuststmt->bindValue(':current_email', $current_email);
+$inscuststmt->execute();
+$inscustcount = $inscuststmt->rowCount();
+$inscuststmt->closeCursor();
+if ($inscustcount == 1){
+	$conn->commit();
+}
+else {
+	$conn->rollBack();
+}
+$conn = null;

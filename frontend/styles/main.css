@@ -1,0 +1,370 @@
+/* Author: Maxwell Crawford */
+html {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+body {
+    background-color: #0099cc;
+    background: -webkit-linear-gradient(to right, #0099cc, black);
+    background: -o-linear-gradient(to right, #0099cc, black);
+    background: -moz-linear-gradient(to right, #0099cc, black);
+    background: linear-gradient(to right, #0099cc, black); /* Standard syntax (must be last) */
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 150px;
+    text-shadow: 0 1px 2px #ffffff;
+}
+
+header {
+	position: absolute; /* allows banner/text to scroll behind navbar */
+	top: 52px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+    text-shadow: 2px 2px 4px #333; /*not supported in IE9 and earlier*/
+}
+
+ /*Manually affix the small logo to the inner left of banner, below Home */
+.sm_logo {
+    position: absolute;
+    left: 10px;
+    margin-left: 10px;
+    margin-top: 22px;
+    text-align: left;
+}
+
+ /*Custom padding for banner element */
+span {
+	padding-top: 50px;
+}
+
+ /*Custom width/height for banner img */
+.banner_img {
+    width: 60%;
+    height: 100px; /*orig 100px, full=150px*/
+}
+
+/* Set of custom fixed/float styles for navbar list */
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+}
+
+ul {
+	position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+/* Used for hovering over non-active nav links */
+li a:hover:not(.active) {
+    background-color: #007399;
+    border-color: #007399;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+/* Used for active link upon hover */
+li a:hover, a:active {
+    background-color: #60bfdf;
+    border-color: #60bfdf;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+/* Used for active link when neutral */
+.active {
+    background-color: #0099cc;
+    border-color: #0099cc;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+/* Used to highlight current page on navbar */
+#here {
+    border-style: solid;
+    border-bottom-color: #40b3d9;
+    border-top-color: #40b3d9;
+    border-left-color: #333;
+    border-right-color: #333;
+    border-width: 1px;
+    text-shadow: 1px 1px 2px black, 5px 5px 30px lightblue, 5px 5px 10px darkblue; /*not supported in IE9 and earlier*/
+}
+
+section {
+	margin-left: 80px;
+}
+
+/* Form stuff..*/
+fieldset {
+    border: 1px solid #2e8ccb;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: white;
+    text-shadow: 0 2px 4px #000000;
+}
+
+fieldset.adminfield {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+div.formleft
+{
+    display: block;
+    float: left;
+    text-align: left;
+    margin-left: 15%;
+}
+
+/* NOTE: This is formatted to align well on fullscreen and smaller width screens! */
+div.formright
+{
+    display: block;
+    float: none;
+    text-align: left;
+    margin-right: 2%;
+    margin-left: 63%;
+}
+
+/* Div formatting for movies to go across screen horiz...*/
+div.moviediv {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+    /*height: 185px;*/
+}
+
+/* Div formatting for movie info page; left=image, right=info, watch btn */
+div.infoleft {
+    display: block;
+    float: left;
+    margin-left: 5%;
+    text-align: center;
+}
+
+div.inforight {
+    display: block;
+    float: left;
+    margin-left: 7%; /*was 5%*/
+}
+
+
+/* Div formatting for watches page */
+div.watchesform {
+    display: block;
+    float: right;
+    text-align: center;
+    margin-right: 10%;
+}
+
+/* Button formatting */
+input[type=submit] {
+    background-color: white;
+    font-size: 14px;
+    padding: 12px 28px;
+    border: 2px solid #008CBA;
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+input[type=submit]:hover {
+    background-color: #008CBA;
+    font-size: 14px;
+    padding: 12px 28px;
+    border: 2px solid #008CBA;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+    box-shadow: 0 12px 16px 30px rgba(0,0,0,0.24) inset, 0 17px 40px 35px rgba(0,0,0,0.19) inset;
+}
+
+div.inforight input, div.inforight input:hover {
+    font-size: 20px;
+    padding: 14px 56px;
+}
+
+/* Input Text formatting */
+input[type=text], input[type=password], input[type=tel] {
+    border: 1px solid #1e344c;
+    border-radius: 4px;
+    color: black;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+input[type=text]:hover, input[type=password]:hover, input[type=tel]:hover {
+    background-color: #008CBA;
+    border: 1px solid #6fd1ff;
+    border-radius: 4px;
+    color: white;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus {
+    background-color: #008CBA;
+    border: 1px solid #6fd1ff;
+    border-radius: 4px;
+    color: white;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+/*Search text */
+.searchtext {
+    position: relative;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 13px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    font-size: 18px;
+}
+
+/* Search Button formatting */
+input.searchbtn {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 100%; /*was 52%*/
+    background-color: #2a363e;
+    font-size: 18px;
+    padding: 10px 28px;
+    border: 2px solid #008CBA;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+input.searchbtn:hover {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 100%;
+    background-color: #33afff;
+    font-size: 18px;
+    padding: 10px 28px;
+    border: 2px solid #33afff;
+    border-radius: 4px;
+    color: white; /*was black*/
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+/* For error messages on the feedback form */
+.warning {
+    font-weight: bold;
+    color: #f00;
+}
+
+/* For enlarging img's upon hover in the gallery...
+ NEED TO EDIT this for later -> change to class specific to gallery imgs!*/
+.searchimg {
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+.searchimg:hover {
+    -ms-transform: scale(1.25, 1.25); /* IE 9 */
+    -webkit-transform: scale(1.25, 1.25); /* Safari */
+    transform: scale(1.25, 1.25);
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+/* Center table text/data (mainly for admin_message)*/
+
+td {
+    height: 30px;
+    vertical-align: center;
+    text-align: center;
+}
+
+/* Footer style; fix to bottom, without overlap! */
+footer {
+	width: 10%;
+    left: 0;
+    bottom: 15px;
+	position: fixed;
+	text-align: left;
+	color:black;
+    line-height: 1em;
+    margin-bottom: 5px;
+    background-color: rgb(200, 220, 245);
+    background: -webkit-linear-gradient(130deg, #0099cc, #2d8bb7); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(130deg, #0099cc, #2d8bb7); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(130deg, #0099cc, #2d8bb7); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(130deg, #0099cc, #2d8bb7); /* Standard syntax (must be last) */
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0.5;
+}
+
+footer:hover {
+    width: 10%;
+    left: 0;
+    bottom: 15px;
+    position: fixed;
+    text-align: left;
+    color:black;
+    line-height: 1em;
+    margin-bottom: 5px;
+    background-color: rgb(200, 220, 245);
+    background: -webkit-linear-gradient(130deg, #0099cc, #2d8bb7); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(130deg, #0099cc, #2d8bb7); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(130deg, #0099cc, #2d8bb7); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(130deg, #0099cc, #2d8bb7); /* Standard syntax (must be last) */
+    opacity: 1.0;
+}
+
+/* Custom black for footer link */
+.footerlink {
+    color: black;
+}
+
+.footerlink a {
+    color: black;
+}
+
+.footerlink a:visited {
+    color: black;
+}
